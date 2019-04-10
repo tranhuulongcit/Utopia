@@ -5,24 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.estrouge.utopia.adapter.CityAdapter;
 import com.estrouge.utopia.databinding.ActivityUtopiaBinding;
 import com.estrouge.utopia.model.City;
-import com.estrouge.utopia.presenter.UtopiaPresenter;
+import com.estrouge.utopia.presenter.CitiesPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UtopiaActivity extends AppCompatActivity implements UtopiaPresenter.IView {
+public class UtopiaActivity extends AppCompatActivity implements CitiesPresenter.IView {
 
     private ActivityUtopiaBinding binding;
     private CityAdapter adapter;
     private List<City> cities;
-    private UtopiaPresenter presenter;
+    private CitiesPresenter presenter;
 
     /**
      * handle init data
@@ -32,7 +30,7 @@ public class UtopiaActivity extends AppCompatActivity implements UtopiaPresenter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_utopia);
-        presenter = new UtopiaPresenter(this);
+        presenter = new CitiesPresenter(this);
         initView();
     }
 
