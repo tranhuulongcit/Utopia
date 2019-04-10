@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Utopia</string>
+    <string name="load_list_done">Load done!</string>
+    <string name="load_list_error">Fetch data from database error!!"</string>
+</resources>
